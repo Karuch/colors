@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: malamteam-colors
+spec:
+  selector:
+    app: malamteam-colors
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

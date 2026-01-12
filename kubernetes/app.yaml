@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: colors
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: colors
+  template:
+    metadata:
+      labels:
+        app: colors
+    spec:
+      containers:
+      - name: colors
+        image: <your-image>
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        env:
+        - name: BACKGROUND_COLOR
+          value: "grey"
+      imagePullSecrets:
+      - name: <your-image-pull-secret>
